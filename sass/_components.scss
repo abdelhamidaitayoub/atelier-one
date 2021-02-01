@@ -1,0 +1,96 @@
+// REVIEWS
+/////////////////
+
+.reviews {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 7rem;
+
+  &__item {
+    background-color: var(--color-gray-light);
+    width: 47rem;
+    padding: 2.2rem;
+    border-radius: 8px;
+    display: flex;
+
+    .stars {
+      margin: 0 3rem;
+
+      img {
+        height: 1.6rem;
+        margin: 0 2px;
+      }
+    }
+
+    &--1 {
+      align-self: flex-start;
+    }
+
+    &--2 {
+      align-self: center;
+    }
+
+    &--3 {
+      align-self: flex-end;
+    }
+  }
+
+  &__text {
+    font-size: 1.3rem;
+    color: var(--color-primary-dark);
+    font-weight: 700;
+  }
+}
+
+// CARD
+/////////////////
+
+.card {
+  background-color: var(--color-primary-dark);
+  border-radius: 10px;
+  padding: 4rem;
+  flex: 0 0 385px;
+
+  &--1 {
+    align-self: flex-start;
+  }
+  &--2 {
+    align-self: center;
+  }
+  &--3 {
+    align-self: flex-end;
+  }
+
+  &__person-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+
+    img {
+      height: 4rem;
+      border-radius: 200px;
+      margin-right: 3rem;
+    }
+
+    .info {
+      h5 {
+        font-size: 1.3rem;
+        color: var(--color-gray-light);
+        margin-bottom: 3px;
+      }
+
+      p {
+        font-size: 1.3rem;
+        color: var(--color-primary-light);
+      }
+    }
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    line-height: 1.7;
+    color: var(--color-gray-light);
+  }
+}
