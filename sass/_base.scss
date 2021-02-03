@@ -9,9 +9,10 @@
   --color-gray-dark: #937b92;
   --color-gray-light: #f7f2f7;
   --color-white: #fff;
-  --desktop-screen: 144rem;
-  --mobile-screen: 37.5rem;
 }
+$desktop-screen: 1440px;
+$medium-screen: 1178px;
+$mobile-screen: 375px;
 
 *,
 *::after,
@@ -23,6 +24,9 @@
 
 html {
   font-size: 62.5%;
+  @media only screen and (max-width: $mobile-screen) {
+    font-size: 40%;
+  }
 }
 
 body {
@@ -30,21 +34,34 @@ body {
   font-family: Spartan, sans-serif;
   font-weight: 400;
   line-height: 1.4;
+  color: var(--color-gray-dark);
+
+  min-height: 100vh;
+
   position: relative;
 
-  background-image: url('../img/bg-pattern-bottom-desktop.svg');
+  background-image: url('../img/bg-pattern-top-desktop.svg');
   background-repeat: no-repeat;
-  background-position: bottom right;
+  background-position: cover;
 
-  position: relative;
+  @media only screen and (max-width: $mobile-screen) {
+    background-image: url('../img/bg-pattern-top-mobile.svg');
+  }
 
-  .bg-top {
-    z-index: -1;
-    position: absolute;
+  &::before {
+    content: '';
     width: 100%;
     height: 100%;
-    background-image: url('../img/bg-pattern-top-desktop.svg');
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-image: url('../img/bg-pattern-bottom-desktop.svg');
     background-repeat: no-repeat;
-    background-position: top left;
+    background-position: bottom right;
+
+    @media only screen and (max-width: $mobile-screen) {
+      background-image: url('../img/bg-pattern-bottom-mobile.svg');
+    }
   }
 }

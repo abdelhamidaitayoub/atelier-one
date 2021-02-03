@@ -1,17 +1,18 @@
-// REVIEWS
-/////////////////
+///////////////////////
+// REVIEWS  COMPONENT
+//////////////////////
 
 .reviews {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   padding: 7rem;
+
+  @media only screen and (max-width: $mobile-screen) {
+    padding: 4rem;
+  }
 
   &__item {
     background-color: var(--color-gray-light);
-    width: 47rem;
-    padding: 2.2rem;
+    flex: 0 0 2rem;
+    padding: 2.2rem 6rem;
     border-radius: 8px;
     display: flex;
 
@@ -21,6 +22,10 @@
       img {
         height: 1.6rem;
         margin: 0 2px;
+        @media only screen and (max-width: $mobile-screen) {
+          height: 2rem;
+          margin: 10px 0;
+        }
       }
     }
 
@@ -35,33 +40,61 @@
     &--3 {
       align-self: flex-end;
     }
+
+    @media only screen and (max-width: $mobile-screen) {
+      width: 100%;
+      flex: 0 0 12rem;
+    }
+
+    @media only screen and (max-width: $medium-screen) {
+      flex-direction: column;
+      align-self: center;
+      width: 100%;
+      padding: 2rem 6rem;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
   }
 
   &__text {
     font-size: 1.3rem;
     color: var(--color-primary-dark);
     font-weight: 700;
+    @media only screen and (max-width: $mobile-screen) {
+      font-size: 1.6rem;
+    }
   }
 }
 
-// CARD
-/////////////////
+///////////////////
+// CARD COMPONENT
+//////////////////
 
 .card {
   background-color: var(--color-primary-dark);
   border-radius: 10px;
+  margin: 2rem;
   padding: 4rem;
-  flex: 0 0 385px;
+  flex: 0 0 100%/3;
 
-  &--1 {
-    align-self: flex-start;
+  &:not(:nth-child(2)) {
+    margin-left: 0;
+    margin-right: 0;
   }
-  &--2 {
-    align-self: center;
+
+  @media only screen and (max-width: $mobile-screen) {
+    margin: 0 0 10px 0;
   }
-  &--3 {
-    align-self: flex-end;
-  }
+
+  // &--1 {
+  //   align-self: flex-start;
+  // }
+  // &--2 {
+  //   align-self: center;
+  // }
+  // &--3 {
+  //   align-self: flex-end;
+  // }
 
   &__person-info {
     display: flex;
